@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LLAMACOIN Burn Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8f0;
+            color: #333;
+            text-align: center;
+            padding: 2em;
+        }
+        h1 {
+            color: #cc0000;
+        }
+        .burn-box {
+            display: inline-block;
+            background: #fff;
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: 2em;
+        }
+        .burn-amount {
+            font-size: 2em;
+            color: #cc0000;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔥 LLAMACOIN Burn Tracker</h1>
+    <div class="burn-box">
+        <div class="burn-amount" id="burned">Loading...</div>
+        <div class="note">Estimated tokens burned (auto-burn 1%)</div>
+    </div>
+
+    <script>
+        const totalSupply = 1000000000;
+        const estimatedBurnPercent = 0.0217;
+        const burned = (totalSupply * estimatedBurnPercent).toLocaleString(undefined, {
+            maximumFractionDigits: 2
+        });
+        document.getElementById("burned").innerText = `${burned} LLAMA`;
+    </script>
+</body>
+</html>
