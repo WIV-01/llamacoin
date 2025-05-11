@@ -20,6 +20,10 @@
     h1 {
       color: #e06b00;
     }
+    h2 {
+      color: #d35400;
+      margin-top: 2em;
+    }
     .btn {
       background: #e06b00;
       color: white;
@@ -34,6 +38,43 @@
       text-decoration: none;
       color: white;
     }
+    .section {
+      max-width: 800px;
+      margin: 3em auto;
+      text-align: left;
+      background: #fff;
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    .highlight {
+      background-color: #ffeaa7;
+      padding: 20px;
+      border-left: 5px solid #fdcb6e;
+      margin-top: 40px;
+      border-radius: 10px;
+    }
+    .hashtag {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #6c5ce7;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
   </style>
 </head>
 <body>
@@ -41,12 +82,69 @@
   <img src="llamacoin_logo_200x200.png" alt="LLAMACOIN Logo">
   <h1>Welcome to LLAMACOIN</h1>
   <p>The most adorable memecoin on the Ethereum blockchain 🦙</p>
-  <p> <br> </p>
   <a href="https://etherscan.io/token/0x8fc340121b3924d31220e7c47740f05f86e6ce27" target="_blank" class="btn">View on Etherscan</a>
   <p><a href="burn_tracker.html">🔥 View Burn Tracker</a></p>
 
+  <button class="btn" onclick="addLLAMACOIN()">➕ Add LLAMACOIN to MetaMask</button>
 
-  <button onclick="addLLAMACOIN()">➕ Add LLAMACOIN to MetaMask</button>
+  <div class="section">
+    <h2>🦙 What Is a Llama?</h2>
+    <p>
+      A <strong>llama</strong> (<em>Lama glama</em>) is a domesticated South American mammal known for its <strong>long neck</strong>,
+      <strong>thick woolly coat</strong>, and <strong>gentle temperament</strong>. Native to the <strong>Andes Mountains</strong>,
+      llamas belong to the camel family and have been essential to Andean cultures for centuries. 
+      Social, smart, and resilient, they carry heavy loads across rough terrain — and if you get on their nerves, they might just spit!
+    </p>
+
+    <h2>🧬 Fun Facts About Llamas</h2>
+    <ul>
+      <li><strong>Height:</strong> 1.7–1.8 m (5.5–6 ft)</li>
+      <li><strong>Weight:</strong> 130–200 kg (280–450 lb)</li>
+      <li><strong>Lifespan:</strong> 15–25 years</li>
+      <li><strong>Diet:</strong> Herbivorous grazers that chew cud</li>
+      <li><strong>Temperament:</strong> Calm, curious, and communicative</li>
+      <li><strong>Eco-friendly:</strong> Their padded feet are gentle on the environment</li>
+    </ul>
+
+    <h2>🧡 Llamas vs. Alpacas</h2>
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>Llama</th>
+        <th>Alpaca</th>
+      </tr>
+      <tr>
+        <td>Size</td>
+        <td>Larger</td>
+        <td>Smaller</td>
+      </tr>
+      <tr>
+        <td>Face</td>
+        <td>Long and narrow</td>
+        <td>Short and blunt</td>
+      </tr>
+      <tr>
+        <td>Ears</td>
+        <td>Banana-shaped</td>
+        <td>Straight and short</td>
+      </tr>
+      <tr>
+        <td>Use</td>
+        <td>Pack animal, wool</td>
+        <td>Luxury fiber only</td>
+      </tr>
+    </table>
+
+    <div class="highlight">
+      <h2>🚀 LlamaCoin: Powered by Fluff, Fun & Community</h2>
+      <p>
+        This <strong>memecoin</strong> is proudly dedicated to the <strong>legendary llama</strong> — a creature as bold,
+        resilient, and quirky as the crypto world itself. Join the herd, ride the hype, and help the llama take over the blockchain.
+      </p>
+      <p><em>It’s not just a coin. It’s a movement.</em></p>
+      <p class="hashtag">#LlamaCoin 🦙🌐</p>
+    </div>
+  </div>
 
   <script>
     async function addLLAMACOIN() {
@@ -72,6 +170,5 @@
       }
     }
   </script>
-  
 </body>
 </html>
