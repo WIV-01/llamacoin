@@ -110,3 +110,9 @@ footer {
   margin: 0 auto 8 auto;
   color: #555;
 }
+
+@media (max-width: 600px) {
+  .tagline {
+    font-size: 1.1rem;
+  }
+}
