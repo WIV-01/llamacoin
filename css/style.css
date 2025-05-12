@@ -118,9 +118,9 @@ td.numeric {
   animation: pulse 2s infinite;
 }
 
-:where(.btn) {
-  /* styles here are lower specificity */
-}
+/*:where(.btn) {
+  /* Lower-specificity wrapper for future overrides */
+}*/
 
 .btn:focus-visible,
 button:focus-visible,
