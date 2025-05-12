@@ -115,34 +115,41 @@
     </p>
   </noscript>
   
-  <script defer>
-    async function addLLAMACOIN() {
-      if (typeof window.ethereum !== 'undefined') {
-        try {
-          await window.ethereum.request({
-            method: 'wallet_watchAsset',
-            params: {
-              type: 'ERC20',
-              options: {
-                address: '0x8fc340121b3924d31220e7c47740f05f86e6ce27',
-                symbol: 'LLAMA',
-                decimals: 18,
-                image: 'https://wiv-01.github.io/llamacoin/llamacoin_logo_200x200.png',
-              },
-            },
-          });
-        } catch (error) {
-          console.error('MetaMask Add Error:', error);
+<script defer>
+  function addLLAMACOIN() {
+    if (typeof window.ethereum !== 'undefined') {
+      window.ethereum.request({
+        method: 'wallet_watchAsset',
+        params: {
+          type: 'ERC20',
+          options: {
+            address: '0x8fc340121b3924d31220e7c47740f05f86e6ce27',
+            symbol: 'LLAMA',
+            decimals: 18,
+            image: 'https://wiv-01.github.io/llamacoin/images/llamacoin_logo_200x200.png',
+          },
+        },
+      }).then((success) => {
+        if (success) {
+          alert('LLAMACOIN has been added to your MetaMask wallet!');
+        } else {
+          alert('LLAMACOIN addition was cancelled.');
         }
-      } else {
-          document.getElementById('metamask-warning').innerHTML = `
-            MetaMask not detected. 
-            <a href="https://metamask.io/download.html" target="_blank" rel="noopener noreferrer">Get MetaMask</a>
-          `;
-          document.getElementById('metamask-warning').style.display = 'block';
+      }).catch((error) => {
+        console.error('MetaMask Add Error:', error);
+      });
+    } else {
+      const warningEl = document.getElementById('metamask-warning');
+      if (warningEl) {
+        warningEl.innerHTML = `
+          MetaMask not detected. 
+          <a href="https://metamask.io/download.html" target="_blank" rel="noopener noreferrer">Get MetaMask</a>
+        `;
+        warningEl.style.display = 'block';
       }
-    }   
-  </script>
+    }
+  }
+</script>
   
 </body>
 </html>
