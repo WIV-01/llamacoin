@@ -83,7 +83,15 @@ ul li {
   margin-bottom: 8px;
 }
 
-.btn:hover {
+button {
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
   background-color: #005fa3;
 }
 
