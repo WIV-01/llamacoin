@@ -1,0 +1,28 @@
+{
+  "name": "LLAMACOIN 🦙",
+  "short_name": "LLAMACOIN",
+  "description": "The cutest memecoin on Ethereum. Join the herd!",
+  "start_url": "/llamacoin/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffb347",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/llamacoin_logo_200x200.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
