@@ -4,13 +4,14 @@ const ASSETS_TO_CACHE = [
   './css/style.css',
   './script.js',
   './manifest.json',
+  './offline.html', // ✅ Add offline page
+  './burn_tracker.html',
   './images/llamacoin_logo_200x200.png',
   './images/favicon-32x32.png',
-  './images/apple-touch-icon.png',
-  './burn_tracker.html'
+  './images/apple-touch-icon.png'
 ];
 
-// Install event – caching static assets
+// ✅ Install event – Cache static assets
 self.addEventListener('install', (event) => {
   console.log('[ServiceWorker] Install');
   event.waitUntil(
@@ -22,7 +23,7 @@ self.addEventListener('install', (event) => {
   self.skipWaiting();
 });
 
-// Activate event – cleanup old caches
+// ✅ Activate event – Cleanup old caches
 self.addEventListener('activate', (event) => {
   console.log('[ServiceWorker] Activate');
   event.waitUntil(
@@ -40,11 +41,19 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch event – serve cached assets or fetch from network
+// ✅ Fetch event – Serve cache, fallback to network or offline.html
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) =>
-      response || fetch(event.request)
-    )
-  );
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() =>
+        caches.match('./offline.html')
+      )
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((response) =>
+        response || fetch(event.request)
+      )
+    );
+  }
 });
