@@ -114,6 +114,8 @@ footer {
   max-width: 800px;
   margin: 0 auto;
   color: #555;
+  margin-bottom: 1.5rem; /* adjust as needed */
+  
 }
 
 @media (max-width: 600px) {
