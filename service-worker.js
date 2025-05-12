@@ -1,7 +1,8 @@
-const CACHE_NAME = 'llamacoin-cache-v1';
+const CACHE_NAME = 'llamacoin-v1';
 const ASSETS_TO_CACHE = [
-  '/', // default root
+  '/',
   '/index.html',
+  '/offline.html',
   '/css/style.css',
   '/images/llamacoin_logo_200x200.png',
   '/images/favicon-32x32.png',
@@ -10,43 +11,42 @@ const ASSETS_TO_CACHE = [
   '/manifest.json'
 ];
 
-// Install Service Worker and cache essential assets
+// Install and cache essential assets
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      console.log('✅ Caching assets for LLAMACOIN...');
       return cache.addAll(ASSETS_TO_CACHE);
     })
   );
   self.skipWaiting();
 });
 
-// Activate and clean up old caches
+// Activate and remove old caches
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cache => {
-          if (cache !== CACHE_NAME) {
-            console.log('🧹 Removing old cache:', cache);
-            return caches.delete(cache);
-          }
+    caches.keys().then(keys =>
+      Promise.all(
+        keys.map(key => {
+          if (key !== CACHE_NAME) return caches.delete(key);
         })
-      );
-    })
+      )
+    )
   );
   self.clients.claim();
 });
 
-// Fetch assets: serve from cache first, fallback to network
+// Fetch from cache, fallback to network, then offline.html
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
-      // Serve from cache or fallback to network
-      return response || fetch(event.request);
-    }).catch(() => {
-      // Optional: fallback HTML page or image if offline
-      return caches.match('/index.html');
+      return (
+        response ||
+        fetch(event.request).catch(() => {
+          if (event.request.headers.get('accept')?.includes('text/html')) {
+            return caches.match('/offline.html');
+          }
+        })
+      );
     })
   );
 });
