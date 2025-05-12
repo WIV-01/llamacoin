@@ -1,0 +1,6 @@
+# robots.txt for LLAMACOIN
+
+User-agent: *
+Disallow:
+
+Sitemap: https://wiv-01.github.io/llamacoin/sitemap.xml
