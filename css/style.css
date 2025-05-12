@@ -60,7 +60,7 @@ h2 {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
-  animation: pulse 2s infinite;
+  /*animation: pulse 2s infinite;*/
 }
 
 .btn:hover {
@@ -181,6 +181,13 @@ button:hover {
   flex-wrap: wrap;
 }
 
+button:disabled,
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 footer {
   background-color: #fffaf4;
   text-align: center;
@@ -205,6 +212,13 @@ footer {
   .tagline {
     font-size: 1.1rem;
   }
-}
 
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+}
 
