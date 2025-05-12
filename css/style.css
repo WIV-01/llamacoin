@@ -63,6 +63,14 @@ h1, h2 {
   line-height: 1.2;
 }
 
+th {
+  font-weight: bold;
+}
+
+th.numeric {
+  text-align: right;
+}
+
 td.numeric {
   text-align: right;
 }
@@ -193,6 +201,7 @@ button {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 button:hover {
@@ -211,6 +220,7 @@ button:disabled,
   background-color: #ccc;
   cursor: not-allowed;
   opacity: 0.6;
+  transform: none;
 }
 
 .btn, button {
