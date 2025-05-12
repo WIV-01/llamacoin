@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #e06b00;
+  --primary-dark: #d35400;
+  --hover: #005fa3;
+  --highlight: #ffeaa7;
+  --highlight-border: #fdcb6e;
+  --accent: #6c5ce7;
+  --pulse: rgba(255, 105, 180, 0.7);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -38,7 +48,7 @@ h2 {
 .btn {
   display: inline-block;
   padding: 0.75rem 1.25rem;
-  background: #e06b00;
+  background: var(--primary); /*#e06b00;*/
   color: white;
   margin-top: 1rem;
   border: none;
@@ -52,7 +62,7 @@ h2 {
 }
 
 .btn:hover {
-  background-color: #005fa3;
+  background-color: var(--primary); /*#005fa3;*/
   transform: scale(1.05);
 }
 
