@@ -1,33 +1,38 @@
-const CACHE_NAME = 'llamacoin-v1';
+const CACHE_NAME = 'llamacoin-cache-v1';
 const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/offline.html',
-  '/css/style.css',
-  '/images/llamacoin_logo_200x200.png',
-  '/images/favicon-32x32.png',
-  '/images/apple-touch-icon.png',
-  '/script.js',
-  '/manifest.json'
+  './index.html',
+  './css/style.css',
+  './script.js',
+  './manifest.json',
+  './images/llamacoin_logo_200x200.png',
+  './images/favicon-32x32.png',
+  './images/apple-touch-icon.png',
+  './burn_tracker.html'
 ];
 
-// Install and cache essential assets
-self.addEventListener('install', event => {
+// Install event – caching static assets
+self.addEventListener('install', (event) => {
+  console.log('[ServiceWorker] Install');
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log('[ServiceWorker] Caching app shell');
       return cache.addAll(ASSETS_TO_CACHE);
     })
   );
   self.skipWaiting();
 });
 
-// Activate and remove old caches
-self.addEventListener('activate', event => {
+// Activate event – cleanup old caches
+self.addEventListener('activate', (event) => {
+  console.log('[ServiceWorker] Activate');
   event.waitUntil(
-    caches.keys().then(keys =>
+    caches.keys().then((keyList) =>
       Promise.all(
-        keys.map(key => {
-          if (key !== CACHE_NAME) return caches.delete(key);
+        keyList.map((key) => {
+          if (key !== CACHE_NAME) {
+            console.log('[ServiceWorker] Removing old cache:', key);
+            return caches.delete(key);
+          }
         })
       )
     )
@@ -35,18 +40,11 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
-// Fetch from cache, fallback to network, then offline.html
-self.addEventListener('fetch', event => {
+// Fetch event – serve cached assets or fetch from network
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return (
-        response ||
-        fetch(event.request).catch(() => {
-          if (event.request.headers.get('accept')?.includes('text/html')) {
-            return caches.match('/offline.html');
-          }
-        })
-      );
-    })
+    caches.match(event.request).then((response) =>
+      response || fetch(event.request)
+    )
   );
 });
