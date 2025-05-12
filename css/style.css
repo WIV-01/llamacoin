@@ -14,6 +14,13 @@
   --pulse: rgba(255, 105, 180, 0.7);
 }
 
+[aria-disabled="true"] {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -45,6 +52,10 @@ h2 {
   color: #d35400;
   margin-top: 2rem;
   font-size: 2rem;
+}
+
+h1, h2 {
+  line-height: 1.2;
 }
 
 .btn {
@@ -79,10 +90,10 @@ h2 {
   color: white;
 }
 
-.btn:focus, button:focus, a:focus {
+/*.btn:focus, button:focus, a:focus {
   outline: 2px solid #fdcb6e;
   outline-offset: 2px;
-}
+}*/
 
 .btn.pulse {
   animation: pulse 2s infinite;
@@ -186,6 +197,10 @@ button:disabled,
   background-color: #ccc;
   cursor: not-allowed;
   opacity: 0.6;
+}
+
+.btn, button {
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 footer {
