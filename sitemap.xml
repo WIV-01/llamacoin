@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://wiv-01.github.io/llamacoin/</loc>
     <lastmod>2025-05-12</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Burn Tracker -->
   <url>
     <loc>https://wiv-01.github.io/llamacoin/burn_tracker.html</loc>
     <lastmod>2025-05-12</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Offline fallback page (optional for SEO) -->
+  <url>
+    <loc>https://wiv-01.github.io/llamacoin/offline.html</loc>
+    <lastmod>2025-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
