@@ -34,8 +34,9 @@ h2 {
   cursor: pointer;
 }
 
-btn:hover {
+.btn:hover {
   background-color: #005fa3;
+  transform: scale(1.05);
 }
 
 a {
