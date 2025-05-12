@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', 'Segoe UI', Roboto, sans-serif;
   background: #fffaf4;
   color: #333;
   margin: 0;
@@ -116,6 +116,10 @@ td.numeric {
 
 .btn.pulse {
   animation: pulse 2s infinite;
+}
+
+:where(.btn) {
+  /* styles here are lower specificity */
 }
 
 .btn:focus-visible,
@@ -241,6 +245,7 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* Remove animations and transitions for users who prefer reduced motion */
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
