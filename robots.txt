@@ -1,6 +1,8 @@
-# robots.txt for LLAMACOIN
-
 User-agent: *
 Disallow:
 
+# Allow crawling of all content
+Allow: /
+
+# Sitemap location
 Sitemap: https://wiv-01.github.io/llamacoin/sitemap.xml
