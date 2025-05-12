@@ -1,7 +1,11 @@
 /* General Styles */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background: #fffaf4;
   color: #333;
   margin: 0;
