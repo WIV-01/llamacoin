@@ -1,5 +1,9 @@
 /* General Styles */
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,7 +13,7 @@ body {
   background: #fffaf4;
   color: #333;
   margin: 0;
-  padding: 2em;
+  padding: 2rem;
   text-align: center;
   line-height: 1.6;
   letter-spacing: 0.2px;
@@ -28,12 +32,12 @@ h1 {
 
 h2 {
   color: #d35400;
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.75em 1.25em;
+  padding: 0.75rem 1.25rem;
   background: #e06b00;
   color: white;
   margin-top: 1rem;
@@ -70,10 +74,10 @@ a {
 
 .section {
   max-width: 800px;
-  margin: 3em auto;
+  margin: 3rem auto;
   text-align: left;
   background: #fff;
-  padding: 2em;
+  padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
@@ -99,7 +103,7 @@ th, td {
 }
 
 .hashtag {
-  font-size: 1.3em;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #6c5ce7;
 }
@@ -135,23 +139,22 @@ footer {
   background-color: #fffaf4;
   text-align: center;
   padding: 10px;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   color: #666;
 }
 
 .tagline {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
   color: #555;
   margin-bottom: 1.5rem; /* adjust as needed */
-  
 }
 
 @media (max-width: 600px) {
   body {
-    padding: 1em;
+    padding: 1rem;
   }
   .tagline {
     font-size: 1.1rem;
