@@ -43,6 +43,11 @@ img {
   height: auto;
 }
 
+p {
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
 h1 {
   color: #e06b00;
   font-size: 2.5rem;
@@ -104,6 +109,11 @@ button:focus-visible,
 a:focus-visible {
   outline: 2px solid var(--highlight-border);
   outline-offset: 2px;
+}
+
+.btn:disabled:hover,
+button:disabled:hover {
+  transform: none;
 }
 
 @keyframes pulse {
