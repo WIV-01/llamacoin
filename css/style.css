@@ -7,6 +7,8 @@ body {
   margin: 0;
   padding: 2em;
   text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
 }
 
 img {
@@ -40,6 +42,11 @@ h2 {
 .btn:hover {
   background-color: #005fa3;
   transform: scale(1.05);
+}
+
+.btn:focus, button:focus, a:focus {
+  outline: 2px solid #fdcb6e;
+  outline-offset: 2px;
 }
 
 @keyframes pulse {
