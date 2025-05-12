@@ -132,9 +132,14 @@
           console.error('MetaMask Add Error:', error);
         }
       } else {
-        alert('MetaMask not detected. Please install MetaMask extension.');
+          document.getElementById('metamask-warning').innerHTML = `
+            MetaMask not detected. 
+            <a href="https://metamask.io/download.html" target="_blank" rel="noopener noreferrer">Get MetaMask</a>
+          `;
+          document.getElementById('metamask-warning').style.display = 'block';
       }
-    }
+    }   
   </script>
+  
 </body>
 </html>
