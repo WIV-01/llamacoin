@@ -82,3 +82,23 @@ ul {
 ul li {
   margin-bottom: 8px;
 }
+
+button {
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+footer {
+  background-color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
+  color: #666;
+}
