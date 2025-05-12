@@ -2,9 +2,10 @@ const CACHE_NAME = 'llamacoin-cache-v1';
 const ASSETS_TO_CACHE = [
   './index.html',
   './css/style.css',
+  './css/offline_css.css',  // ✅ Added offline CSS
   './script.js',
   './manifest.json',
-  './offline.html', // ✅ Add offline page
+  './offline.html',
   './burn_tracker.html',
   './images/llamacoin_logo_200x200.png',
   './images/favicon-32x32.png',
