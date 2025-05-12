@@ -66,6 +66,17 @@ h2 {
   transform: scale(1.05);
 }
 
+.btn.inverse {
+  background-color: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn.inverse:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
 .btn:focus, button:focus, a:focus {
   outline: 2px solid #fdcb6e;
   outline-offset: 2px;
