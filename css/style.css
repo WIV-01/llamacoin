@@ -120,6 +120,13 @@ button:hover {
   background-color: #005fa3;
 }
 
+.button-row {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 footer {
   background-color: #fffaf4;
   text-align: center;
