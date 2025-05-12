@@ -146,3 +146,22 @@ footer {
     font-size: 1.1rem;
   }
 }
+
+.section a {
+  color: #e06b00;
+  text-decoration: underline;
+}
+.section a:hover {
+  color: #005fa3;
+}
+
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #e06b00;
+}
+
+.btn, button {
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+
